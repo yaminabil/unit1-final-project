@@ -1,0 +1,173 @@
+.wrapper {
+    /* border : solid black; */
+    width: 100%;
+    height: 980px;
+
+}
+
+
+
+
+
+#window-three {
+    display: none;
+    width: 100%;
+    height:100%;
+    border: solid red;
+    background-color:orange;
+}
+
+#window-four {
+    display: none;
+    width: 100%;
+    height:100%;
+    border: solid red;
+    background-color:lightslategrey
+}
+
+#window-five {
+    display: none;
+    width: 100%;
+    height:100%;
+    border: solid red;
+    background-color: lightpink;
+}
+
+
+/****************************************************/
+
+
+#window-one {
+    width: 100%;
+    height:100%; 
+    background-image: url("full.gif");
+     border:solid white;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+/* button {
+    font-size: large;
+} */
+
+.general1 {
+    /* border :solid black; */
+    width :25%;
+    height: 25%;
+    margin: 20% auto;
+    align-items: center;
+    text-align: center;
+    color:white;
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+    /* background-color: lightgoldenrodyellow; */
+}
+
+
+ #name {
+    font-size: 25px;
+    background: grey;
+    color: white;
+    border: solid grey;
+    
+}
+
+#header {
+    display: flex;
+    background-color: grey;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+}
+
+#title1 {
+    /* border: solid white; */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 12px 0px;
+    color: white;
+    background-color: grey;
+    margin-left: 12px;
+}
+
+#button-start { 
+    font-size: 20px;
+    padding: 20px 60px;
+    border-radius: 10px;
+    color:white;
+    background-color: grey;
+    
+}
+
+#about {
+    font-size: 20px;
+    padding: 20px 60px;
+    border-radius: 10px;
+    color:white;
+    background-color: grey;
+    border: grey;
+    
+}
+
+
+
+
+/****************************************************/
+
+#window-two {
+    width: 100%;
+    height:100%;
+    border: solid red;
+    display: none;
+    background-color:lightskyblue;
+}
+
+.general2 {
+    border:solid blue;
+    height: 100%;
+}
+
+
+#map {
+    background:green;
+    height: 90%;
+    
+
+}
+
+#switch-page {
+   
+    background:grey;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+#switch-page > button {
+    font-size: 30px;
+    background-color: grey;
+    color: white;
+    border: grey;
+   
+}
+
+#title2 {
+    /* border: solid white; */
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 12px 0px;
+    color: white;
+    background-color: grey;
+}
+
+
+
+
+
+/****************************************************/
