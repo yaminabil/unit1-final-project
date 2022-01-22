@@ -3,13 +3,16 @@ class driver {
       this.name=name;
       this.drivingHours =0;
       this.sleepingHours = 0;
-      this.money=1000;
+      this.money=100000;
       this.truckList=[];
 
     }
 
 
     buyTruck (truck){
+        this.truckList.push(truck);
+        this.money -= truck.value;
+
 
 
     }
@@ -166,6 +169,8 @@ buttonStart.addEventListener ("click" , start)  ;
     if (inputName.value.trim() === "" ) {
         console.log ("enter a valid name "); 
         question.textContent= "Enter a valid name  please!"
+
+
     } else {
         windowTwo.style.display = "block";
         windowOne.style.display="none";
@@ -183,17 +188,28 @@ buttonStart.addEventListener ("click" , start)  ;
    
 
             let truckOne = new truck (40000,2012,truckNames[0]);
-            let truckTow = new truck (35000,2011,truckNames [1]);
+            let truckTwo = new truck (35000,2011,truckNames [1]);
+            // console.log (truckOne);
+            // console.log (truckTwo);
+
+
+        // the player have to own one in order for him to start playing 
+            
+             player.buyTruck (truckOne);
+             console.log (player) ;
+
+
+        // 
+
+         
+             
+
 
 
 
         // 
 
-          
-    
-    
-    
-    
+            
 
 }} ;
 
