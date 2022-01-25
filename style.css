@@ -12,21 +12,9 @@
 
 
 
-#window-three {
-    display: none;
-    width: 100%;
-    height:100%;
-    border: solid red;
-    background-color:orange;
-}
 
-#window-four {
-    display: none;
-    width: 100%;
-    height:100%;
-    border: solid red;
-    background-color:lightslategrey
-}
+
+
 
 #window-five {
     display: none;
@@ -37,16 +25,16 @@
 }
 
 
-/****************************************************/
+/*** window one *************************************************/
 
 
 #window-one {
     width: 100%;
     height:100%; 
     background-image: url("full.gif");
-     border:solid white;
+     /* border:solid white; */
     
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     
 }
@@ -118,26 +106,27 @@
 
 
 
-/****************************************************/
+/****window two ************************************************/
 
 #window-two {
     width: 100%;
     height:100%;
-    border: solid black;
+    /* border: solid black; */
     display: none;
     background-color:lightskyblue;
 }
 
 .general2 {
-    border:solid blue;
+    /* border:solid blue; */
     height: 100%;
 }
 
 
 #map {
-    background:lightblue;
+    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/map.jpeg");
+    background-size :cover;
     height: 90%;
-    border: 4px solid brown;
+    /* border: 4px solid brown; */
     
 
 }
@@ -155,7 +144,6 @@
 #switch-page > button {
     font-size: 30px;
     background-color: grey;
-   
     border: grey;
    
 }
@@ -178,6 +166,7 @@
     flex-direction: column;
     justify-content: space-between;
     height: 90%;
+    margin: 10px;
 
 }
 
@@ -185,47 +174,44 @@
 .two-cities {
     display: flex;
     justify-content: space-between;
-    border: solid hotpink;
-    height: 25%;
+    /* border: solid hotpink; */
+    height: 30%;
     
 }
 
-#chooseWindow{
-    border: solid hotpink;
-    height: 40%;
-    /* display: none; */
 
-
-
-}
-
-#window {
-    border: 2px solid red;
-    height: 100%;
-    margin: 0 auto;
-    width: 50%;
-   
-}
 
 .city {
-    width :25%;
+    width :10%;
     height: 100%;
     background-color: honeydew;
     /* border: solid black; */
     text-align: center;
-    border-radius: 10px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+
+    
+    
+   
+    
 
 }
 
 .goto {
     
-    padding: 12px 30px;
+    padding: 8px 12px;
+    width: 20%;
+    background-color: grey;
+    color: white;
     
 }
 #cityOne {
    
     background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/2.jpeg");
     background-size: cover;
+    
 }
 #cityTwo {
     background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/1.jpeg");
@@ -241,6 +227,63 @@
 }
 
 
+.show-truck-image {
+    display: block;
+}
+
+img {
+    /* border :solid blue; */
+    margin: 10% auto;
+    display: none;
+}
+
+
+
+
+#chooseWindow {
+    /* border: solid grey; */
+    height: 40%;
+    width: 40%;
+    font-size: 100%;
+    text-align: center;
+    margin: 0 auto;
+  
+
+}
+
+#window-info {
+    border: 2px solid ;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    background-color: grey;
+    color: white;
+    
+   
+}
+
+
+
+#city-info {
+    /* border : solid blue; */
+   display: flex;
+   flex-direction: row;
+
+}
+
+ul {
+    list-style: none;
+    float: left;
+   
+    
+}
+
+li {
+   padding: 4px;
+   /* border :solid green; */
+   text-align: left;
+   
+}
 
 
 
@@ -248,4 +291,170 @@
 
 
 
-/****************************************************/
+/***window three *************************************************/
+
+#window-three {
+    display: none;
+    width: 100%;
+    height:100%;
+    
+}
+
+.general3 {
+    /* border : solid black ; */
+    height: 100%;
+}
+
+#info {
+    
+    height: 90%;
+    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/semi-incab.jpeg");
+    background-size: 100% 100%;
+}
+#switch-page2 {
+    background:grey;
+    height: 10%;
+    display: flex;
+   
+  align-items: center;
+  justify-content:right;
+    
+}
+
+#switch-page2 > button {
+    font-size: 30px;
+    background-color: grey;
+    border: solid grey;
+    margin-bottom: 0;
+    
+   
+}
+
+
+
+#load-sheets {
+    border : solid white;
+    color: white;
+    font-size: x-large;
+    background-color: grey;
+    width: 30%;
+    height: 70%;
+    text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content:space-around;
+   margin: 2% auto;
+
+}
+
+#general-info > ul > li{
+    /* border:solid white; */
+    padding: 7px;
+    margin: 5px;
+}
+
+/* window four ******************************************/
+
+
+#window-four {
+    display: none;
+    width: 100%;
+    height:100%;
+    
+    background-color:lightslategrey
+}
+
+
+
+#play {
+    height: 90%;
+    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/Road (Anime Background) 001.jpeg");
+    background-size: 100% 100%;
+   
+}
+
+#play-field{
+    display: flex;
+    height: 93.5%;
+    
+    
+}
+
+
+#side-info {
+    
+    width: 30%;
+   /* border: solid red; */
+   background-color: grey;
+   color:white;
+   border:solid white;
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+
+#driver-list {
+   
+    /* border:solid  tomato; */
+    height: 60%;
+    font-size: 17px;
+}
+
+#truck-list {
+    height: 40%;
+    font-size: 17px;
+    /* border:solid  tomato; */
+    padding-bottom: 7px;
+
+}
+
+
+#side-play {
+    width: 70%;
+    /* border: solid blue; */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+    
+}
+
+#gif-side {
+    height: 45%;
+    /* background-color: red; */
+    width: 50%;
+    margin: 0 auto;
+    background-size: 100% 100%;
+}
+
+#remote-side {
+    height: 30%;
+  
+    
+   width: 70%;
+   margin: 0 auto;
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 10px;
+}
+
+#remote-side > button {
+    font-size: 20px;
+    padding: 20px 60px;
+    border-radius: 10px;
+    color:white;
+    background-color: grey;
+
+}
+#command {
+    color: white;
+    text-align: center;
+}
+
+
+
+
