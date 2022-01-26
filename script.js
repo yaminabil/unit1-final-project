@@ -155,17 +155,23 @@ let listBillOfLading = document.querySelectorAll ("#list-bill-of-lading > li");
 let finalList1 =document.querySelectorAll ("#final-list1 > li");
 let finalList2 =document.querySelectorAll ("#final-list2 > li");
 let command =document.getElementById ("command");
+let div1 = document.getElementById ("one1");
 
 // query selection for buttons back  and inputs  and images
 
 let buttonFinish = document.getElementById ("finish");
 let buttonEndTheGame = document.getElementById("end-game");
+let buttonStop = document.getElementById ("finish-the-game");
 
 let inputName =document.getElementById ("name");
 
 let cityName = document.getElementById ("city-name");
 let listOne =document.querySelectorAll("#list-one > li");
 let  gifSide =document.getElementById ("gif-side");
+
+let result =document.querySelector ("#result");
+
+
 
 
 // query selection for windows 
@@ -199,10 +205,22 @@ buttonStart.addEventListener ("click" , start);
 
     function start () {
 
+        // your location in biginig is always in city one 
+        truckImage [0].classList.add ("show-truck-image");
+        truckImage [1].classList.remove ("show-truck-image");
+        truckImage [2].classList.remove ("show-truck-image");
+        truckImage [3].classList.remove ("show-truck-image");
 
 
-        // in biginig the choose window should be displayed until driver select a city where he wants to go 
+
+        // in biginig the choose window should be displayed until driver select a city where he wants to go  
         chooseWind.style.display = "none";
+        result.textContent="Winner"
+        result.style.color="green"
+        result.style.display ="none";
+        buttonMoreLoads.addEventListener ("click", moreLoads);
+       
+
 
 
 
@@ -462,9 +480,9 @@ buttonNext.addEventListener ("click" , (evt) =>{
 buttonThree.addEventListener ("click" , (evt) =>{
      
     windowFour.style.display= "block";
-    windowThree.style.display = "none";
+    windowThree.style.display = "none"; 
 
-
+    gifSide.style.backgroundImage="";
 
     // we fill up the 2 lists of the side info
 
@@ -478,11 +496,14 @@ finalList1 [4].textContent =player.sleepingHours;
 finalList1 [5].textContent =player.restTime;
 finalList1 [6].textContent =player.money;
 
-player.truckList.forEach(element => {
-    finalList1 [7].textContent += element.make + " ";
+// player.truckList.forEach(element => {
+//     finalList1 [7].textContent += element.make + " ";
     
 
-});
+// });
+
+finalList1 [7].textContent =truckOne.make;
+
 
 finalList1 [8].textContent =player.days;
 finalList1 [9].textContent =player.milesToRun;
@@ -737,6 +758,32 @@ function more () {
     drive.addEventListener ("click" , driving);
     command.textContent = "";
 
+    player.currentLocation=player.selectCity.name ;
+    player.nextLocation="";
+
+    buttonMore.removeEventListener ("click" , more) ;
+    if (player.days>4 ){
+        result.style.display="block";
+        result.style.color ="red" ;
+        result.textContent = "you lost because you're not home ";
+        buttonMoreLoads.removeEventListener ("click" , moreLoads); }
+
+    if (player.days === 4 && player.money > 64000)  {
+        result.style.display="block";
+        buttonMoreLoads.removeEventListener ("click" , moreLoads);
+       
+    }else if (player.days===4 && player.money < 64000 ){
+        result.style.display="block";
+        result.style.color ="red" ;
+        result.textContent = "you lost because you made less than $4000";
+        buttonMoreLoads.removeEventListener ("click" , moreLoads);
+    } else if (player.days===4 && player.currentLocation!== "city one") {
+        result.style.display="block";
+        result.style.color ="red" ;
+        result.textContent = "you lost because you made less than $4000";
+        buttonMoreLoads.removeEventListener ("click" , moreLoads);
+    }
+
 }
 
 
@@ -747,12 +794,15 @@ function more () {
 let truckImage =document.querySelectorAll ("img");
 console.log (truckImage);
 
-buttonMoreLoads.addEventListener ("click" , (evt) =>{
+buttonMoreLoads.addEventListener ("click" , moreLoads);
+
+function moreLoads() {
+    
+    div1.style.display =  "none";
     
     windowTwo.style.display="block";
     windowFive.style.display ="none";
-    player.currentLocation=player.selectCity.name ;
-    player.nextLocation="";
+   
     console.log (player);
 
     if (player.currentLocation === "city two") {
@@ -780,11 +830,45 @@ buttonMoreLoads.addEventListener ("click" , (evt) =>{
         truckImage [2].classList.remove ("show-truck-image");
     }
 
-})
 
-buttonEndTheGame.addEventListener ("click", (evt) => {
+
+}
+
+buttonEndTheGame.addEventListener ("click", end) ;
+function end() {
     windowOne.style.display="block";
     windowFive.style.display ="none";
     inputName.value="";
-})
+    
+    
+}
+
+
+/// query 
+
+let summaryList = document.querySelectorAll("#Summary-list > li");
+
+buttonStop.addEventListener ("click" , stop );
+function stop() {
+    div1.style.display =  "block";
+    console.log (milesToRunVar)
+
+    summaryList [0].textContent = player.currentLocation ;
+    summaryList [1].textContent = player.days ;
+    if(player.selectCity === cityThree || player.selectCity === cityTwo ) {
+        summaryList[2].textContent =700;
+    }else if (player.selectCity === cityOne ) {
+        summaryList[2].textContent = 0;
+    } else {
+        summaryList[2].textContent = 1400;
+    }
+    summaryList [3].textContent =player.money-60000;
+
+    if (player.days === 4) {
+        summaryList [4].textContent ="finished";    }
+    
+}
+
+
+
 
