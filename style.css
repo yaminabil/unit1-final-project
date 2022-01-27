@@ -5,19 +5,14 @@
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.city:hover {
+    position:relative;
+    top:-50px;
+    width:200px;
+    height:auto;
+    display:block;
+    z-index:1;
+}
 
 /*** window one *************************************************/
 
@@ -475,13 +470,13 @@ li {
 
 
 #analysis {
-    border: solid white ;
+    /* border: solid white ; */
     width: 30%;
     margin: 0 auto;
     height: 60%;
     margin-top:5% ;
     margin-bottom: 5%;
-    background-color: grey;
+    background-color: rgb(228, 220, 220);
     padding: 10px 10px ;
     display: flex;
     flex-direction: column;
@@ -497,7 +492,7 @@ li {
 }
 #one1 {
     display: none;
-    border: solid white ;
+    /* border: solid white ; */
 
 }
 

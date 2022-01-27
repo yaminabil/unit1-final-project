@@ -2,12 +2,10 @@ class driver {
     constructor (name) {
 
       this.name=name;
-
       this.drivingHours =0;
       this.sleepingHours = 0;
       this.restTime=0;
       this.days =0;
-
       this.money=100000;
       this.truckList=[];
       this.truckInUse = this.truckList [0];
@@ -15,8 +13,6 @@ class driver {
       this.nextLocation= "";
       this.selectCity=city;
       this.milesToRun =0;
-      
-
 
     }
 
@@ -24,9 +20,6 @@ class driver {
     buyTruck (truck){
         this.truckList.push(truck);
         this.money -= truck.value;
-
-
-
     }
 
    
@@ -98,39 +91,6 @@ class city {
 }
 
 
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // query selection for buttons next
 
 let buttonStart = document.querySelector ("#button-start");
@@ -162,13 +122,10 @@ let div1 = document.getElementById ("one1");
 let buttonFinish = document.getElementById ("finish");
 let buttonEndTheGame = document.getElementById("end-game");
 let buttonStop = document.getElementById ("finish-the-game");
-
 let inputName =document.getElementById ("name");
-
 let cityName = document.getElementById ("city-name");
 let listOne =document.querySelectorAll("#list-one > li");
 let  gifSide =document.getElementById ("gif-side");
-
 let result =document.querySelector ("#result");
 
 
@@ -187,21 +144,13 @@ let question = document.getElementById ("question");
 
 // all the event listners  for next 
 
-
-
-
-
-
-
-
-
 let click =false ;
 
 // all the event listners  for back
 
 
 
-buttonStart.addEventListener ("click" , start);
+buttonStart.addEventListener ("click" , start); // <--------------------------start the game here 
 
     function start () {
 
@@ -219,6 +168,10 @@ buttonStart.addEventListener ("click" , start);
         result.style.color="green"
         result.style.display ="none";
         buttonMoreLoads.addEventListener ("click", moreLoads);
+        summaryList [4].textContent ="Not finished";   // not finished 
+        div1.style.display =  "none";
+        
+
        
 
 
@@ -483,6 +436,7 @@ buttonThree.addEventListener ("click" , (evt) =>{
     windowThree.style.display = "none"; 
 
     gifSide.style.backgroundImage="";
+    j=0;
 
     // we fill up the 2 lists of the side info
 
@@ -525,7 +479,7 @@ finalList1 [9].textContent =player.milesToRun;
 
 // driving time 
 
-let gifArr = ['/Users/bilalyounes/Desktop/unit1-final-project/gif1.gif',
+let gifDrive = ['/Users/bilalyounes/Desktop/unit1-final-project/gif1.gif',
 '/Users/bilalyounes/Desktop/unit1-final-project/gif2.gif',
 '/Users/bilalyounes/Desktop/unit1-final-project/gif3.gif',
 '/Users/bilalyounes/Desktop/unit1-final-project/gif4.gif',
@@ -535,10 +489,36 @@ let gifArr = ['/Users/bilalyounes/Desktop/unit1-final-project/gif1.gif',
 '/Users/bilalyounes/Desktop/unit1-final-project/gif4.gif',
 '/Users/bilalyounes/Desktop/unit1-final-project/gif1.gif',
 '/Users/bilalyounes/Desktop/unit1-final-project/gif1.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif5.gif'
-
-
+'/Users/bilalyounes/Desktop/unit1-final-project/gif5.gif',
 ]
+
+
+let gifRest = ['/Users/bilalyounes/Desktop/unit1-final-project/gif-rest-one.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/gif-rest-two.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/gif-rest-three.gif'];
+
+
+let gifSleep =['/Users/bilalyounes/Desktop/unit1-final-project/sleep1.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep2.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep3.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep4.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep5.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep6.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep7.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep8.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep9.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep10.gif',
+'/Users/bilalyounes/Desktop/unit1-final-project/sleep10.gif']
+
+let fuelImage = ['/Users/bilalyounes/Desktop/unit1-final-project/fuel1.jpeg',
+'/Users/bilalyounes/Desktop/unit1-final-project/fuel2.jpeg',
+'/Users/bilalyounes/Desktop/unit1-final-project/fuel3.jpeg',
+'/Users/bilalyounes/Desktop/unit1-final-project/fuel4.jpeg',
+'/Users/bilalyounes/Desktop/unit1-final-project/fuel5.jpeg',
+'/Users/bilalyounes/Desktop/unit1-final-project/fuel6.jpeg',
+'/Users/bilalyounes/Desktop/unit1-final-project/fuel7.jpeg']
+
+
 
 
 let i =0 ;
@@ -555,7 +535,7 @@ drive.addEventListener ("click" ,driving);
 
 function driving() {
    
-gifSide.style.backgroundImage = (`url(${gifArr [i]})`);
+gifSide.style.backgroundImage = (`url(${gifDrive [i]})`);
 
 
 
@@ -634,13 +614,10 @@ finalList1 [9].textContent = player.milesToRun;
 }
 
 // rest --------------------------> 
-
-
-
-
-
-
 function resting() {
+
+    gifSide.style.backgroundImage = (`url(${gifRest [player.restTime]})`);
+
     player.restTime++;
     finalList1 [5].textContent =player.restTime; 
     command.textContent="now you can go back to driving" ; 
@@ -649,8 +626,8 @@ function resting() {
 
 }
 
-
 function sleeping () {
+    gifSide.style.backgroundImage = (`url(${gifSleep [player.sleepingHours]})`);
     if (player.sleepingHours < 10){
     player.sleepingHours++; 
     finalList1 [4].textContent =player.sleepingHours;
@@ -666,31 +643,19 @@ function sleeping () {
         finalList1 [3].textContent =player.drivingHours;
 
         player.restTime = 0;
-        finalList1 [5].textContent = player.restTime; 
-
-        
-
-        
-
-        
-
-        
-        
+        finalList1 [5].textContent = player.restTime;    
 
     }
-
-    
-
-
-
-
 }
 
 
 
-
+// fueling -------------------------------------->
+window.j = 0;
 function fueling () {
     if (truckOne.fuel < 140 ) {
+        gifSide.style.backgroundImage = (`url(${ fuelImage[j]})`);
+        j++;
 
     player.fuel(truckOne) ;
     finalList2 [4].textContent = truckOne.fuel; 
@@ -705,11 +670,10 @@ function fueling () {
             drive.addEventListener ("click" , driving);
             command.textContent = 
             `now after sleeping and your truck tank is full you can go back to drive you spend about ${140*player.selectCity.fuelPrice} dollars in fuel so far`;
-            
-
-            
+            j=0;
 
         } else {
+
             if (milesToRunVar === 700 ){
             command.textContent = ` you spend ${140*player.selectCity.fuelPrice} dollars in fuel and you made ${milesToRunVar * player.selectCity.loadPrice} dollars for this load , click more  to check out your options `;
             player.money +=  milesToRunVar * player.selectCity.loadPrice - 140*player.selectCity.fuelPrice;
@@ -737,7 +701,7 @@ function fueling () {
             finalList2 [3].textContent = truckOne.miles; 
 
              // add event listner to button more 
-             buttonMore.addEventListener ("click" , more );
+             buttonMore.addEventListener ("click" , more ); // <----- more()
 
             }
 
@@ -750,6 +714,7 @@ function fueling () {
 }
 
 
+//more --------------------------------> 
 
 function more () {
     windowFive.style.display ="block";
@@ -766,6 +731,7 @@ function more () {
         result.style.display="block";
         result.style.color ="red" ;
         result.textContent = "you lost because you're not home ";
+       
         buttonMoreLoads.removeEventListener ("click" , moreLoads); }
 
     if (player.days === 4 && player.money > 64000)  {
@@ -787,10 +753,8 @@ function more () {
 }
 
 
-
-
-
 // query for truck image 
+
 let truckImage =document.querySelectorAll ("img");
 console.log (truckImage);
 
@@ -830,28 +794,29 @@ function moreLoads() {
         truckImage [2].classList.remove ("show-truck-image");
     }
 
-
-
 }
+
+// End the Game --------------------------->
 
 buttonEndTheGame.addEventListener ("click", end) ;
 function end() {
     windowOne.style.display="block";
     windowFive.style.display ="none";
-    inputName.value="";
-    
-    
+    inputName.value="";  
 }
 
 
-/// query 
+/// query  for summary list ----------------->
 
 let summaryList = document.querySelectorAll("#Summary-list > li");
 
+// stop button ------------------------------->
 buttonStop.addEventListener ("click" , stop );
+
 function stop() {
+
     div1.style.display =  "block";
-    console.log (milesToRunVar)
+    console.log (milesToRunVar);
 
     summaryList [0].textContent = player.currentLocation ;
     summaryList [1].textContent = player.days ;
@@ -864,7 +829,7 @@ function stop() {
     }
     summaryList [3].textContent =player.money-60000;
 
-    if (player.days === 4) {
+    if (player.days >= 4 ) {
         summaryList [4].textContent ="finished";    }
     
 }
