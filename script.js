@@ -352,9 +352,6 @@ for (let i = 0 ; i < 4 ;i++) {
                     listOne [3].textContent = "$ "+ cityFour.loadPrice;
 
                      }
-
-
-
         
         
     
