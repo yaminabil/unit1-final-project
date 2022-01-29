@@ -20,7 +20,7 @@
 #window-one {
     width: 100%;
     height:100%; 
-    background-image: url("full.gif");
+    background-image: url("img/full.gif");
      /* border:solid white; */
     
     background-size: 100% 100%;
@@ -112,7 +112,7 @@
 
 
 #map {
-    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/map.jpeg");
+    background-image: url("img/map.jpeg");
     background-size :cover;
     height: 90%;
     /* border: 4px solid brown; */
@@ -198,20 +198,20 @@
 }
 #cityOne {
    
-    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/2.jpeg");
+    background-image: url("img/2.jpeg");
     background-size: cover;
     
 }
 #cityTwo {
-    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/1.jpeg");
+    background-image: url("img/1.jpeg");
     background-size: cover;
 }
 #cityThree {
-    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/8f8ca963523c5e466128cd1518de8ad8.jpeg");
+    background-image: url("img/8f8ca963523c5e466128cd1518de8ad8.jpeg");
     background-size: cover;
 }
 #cityFour {
-    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/images.jpeg");
+    background-image: url("img/images.jpeg");
     background-size: cover;
 }
 
@@ -297,7 +297,7 @@ li {
 #info {
     
     height: 90%;
-    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/semi-incab.jpeg");
+    background-image: url("img/semi-incab.jpeg");
     background-size: 100% 100%;
 }
 #switch-page2 {
@@ -357,7 +357,7 @@ li {
 
 #play {
     height: 90%;
-    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/Road (Anime Background) 001.jpeg");
+    background-image: url("img/Road (Anime Background) 001.jpeg");
     background-size: 100% 100%;
    
 }
@@ -452,7 +452,7 @@ li {
     width: 100%;
     height:100%;
     /* border: solid red; */
-    background-image: url("/Users/bilalyounes/Desktop/unit1-final-project/sunset2.png") ;
+    background-image: url("img/sunset2.png") ;
     background-size: 100% 100%;
 }
 
@@ -500,5 +500,31 @@ li {
     /* display: none; */
     color: green;
 }
+
+
+/*window about ************************************************/
+
+#window-about  {
+    display: none;
+    background-color: grey;
+    position: absolute;
+    /* border: solid white; */
+    top:7%;
+    right: 8px;
+    height: 30%;
+    width: 35%;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 25px;
+    color :white;
+    
+    text-align: justify;
+    text-justify: inter-word;
+  
+    
+    line-height: 30px;
+    
+}
+
 
 

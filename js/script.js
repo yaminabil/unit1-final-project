@@ -131,13 +131,16 @@ let result =document.querySelector ("#result");
 
 
 
+
 // query selection for windows 
 
+let body = document.querySelector ("body");
 let windowOne =document.getElementById ("window-one");
 let windowTwo =document.getElementById ("window-two");
 let windowThree =document.getElementById ("window-three");
 let windowFour =document.getElementById ("window-four");
 let windowFive =document.getElementById ("window-five");
+let windowAbout =document.getElementById ("window-about");
 
 // select all the titles 
 let question = document.getElementById ("question");
@@ -146,7 +149,14 @@ let question = document.getElementById ("question");
 
 let click =false ;
 
-// all the event listners  for back
+// all music here 
+let startAudio = document.createElement("audio");
+let driveAudio = document.createElement("audio");
+
+startAudio.src = "mp3/Action-Rock.mp3";
+driveAudio.src = "mp3/All-Out-Attack.mp3";
+document.body.appendChild (startAudio);
+document.body.appendChild (driveAudio);
 
 
 
@@ -170,6 +180,15 @@ buttonStart.addEventListener ("click" , start); // <--------------------------st
         buttonMoreLoads.addEventListener ("click", moreLoads);
         summaryList [4].textContent ="Not finished";   // not finished 
         div1.style.display =  "none";
+        windowAbout.style.display = "none";
+
+       
+
+       
+          
+
+
+       
         
 
        
@@ -185,7 +204,10 @@ buttonStart.addEventListener ("click" , start); // <--------------------------st
     } else {
         windowTwo.style.display = "block";
         windowOne.style.display="none";
-        
+
+
+         // lets add some music 
+         startAudio.play();
 
 
         // first we have to create a driver 
@@ -242,6 +264,8 @@ if (click===false)  {
 for (let i = 0 ; i < 4 ;i++) {
     
     goto[i].addEventListener("click" , evt => {
+
+        
     
         
     
@@ -393,8 +417,7 @@ buttonFinish.addEventListener ("click" ,(evt) => {
     windowTwo.style.display = "none";
     windowOne.style.display = "block"
     chooseWind.style.display = "none";
-
-
+   
     inputName.value = "" ;
 } )
 
@@ -406,6 +429,10 @@ buttonNext.addEventListener ("click" , (evt) =>{
     windowThree.style.display = "block";
     windowTwo.style.display = "none";
     console.log("test");
+
+    //pause the audio 
+     startAudio.pause();
+     driveAudio.play ();
 
     listBillOfLading [0].textContent = player.name;
     listBillOfLading [1].textContent = player.currentLocation;
@@ -431,6 +458,8 @@ buttonThree.addEventListener ("click" , (evt) =>{
      
     windowFour.style.display= "block";
     windowThree.style.display = "none"; 
+
+     
 
     gifSide.style.backgroundImage="";
     j=0;
@@ -476,44 +505,44 @@ finalList1 [9].textContent =player.milesToRun;
 
 // driving time 
 
-let gifDrive = ['/Users/bilalyounes/Desktop/unit1-final-project/gif1.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif2.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif3.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif4.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif5.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif6.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif7.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif4.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif1.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif1.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif5.gif',
+let gifDrive = ['img/gif1.gif',
+'img/gif2.gif',
+'img/gif3.gif',
+'img/gif4.gif',
+'img/gif5.gif',
+'img/gif6.gif',
+'img/gif7.gif',
+'img/gif4.gif',
+'img/gif1.gif',
+'img/gif1.gif',
+'img/gif5.gif',
 ]
 
 
-let gifRest = ['/Users/bilalyounes/Desktop/unit1-final-project/gif-rest-one.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif-rest-two.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/gif-rest-three.gif'];
+let gifRest = ['img/gif-rest-one.gif',
+'img/gif-rest-two.gif',
+'img/gif-rest-three.gif'];
 
 
-let gifSleep =['/Users/bilalyounes/Desktop/unit1-final-project/sleep1.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep2.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep3.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep4.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep5.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep6.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep7.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep8.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep9.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep10.gif',
-'/Users/bilalyounes/Desktop/unit1-final-project/sleep10.gif']
+let gifSleep =['img/sleep1.gif',
+'img/sleep2.gif',
+'img/sleep3.gif',
+'img/sleep4.gif',
+'img/sleep5.gif',
+'img/sleep6.gif',
+'img/sleep7.gif',
+'img/sleep8.gif',
+'img/sleep9.gif',
+'img/sleep10.gif',
+'img/sleep10.gif']
 
-let fuelImage = ['/Users/bilalyounes/Desktop/unit1-final-project/fuel1.jpeg',
-'/Users/bilalyounes/Desktop/unit1-final-project/fuel2.jpeg',
-'/Users/bilalyounes/Desktop/unit1-final-project/fuel3.jpeg',
-'/Users/bilalyounes/Desktop/unit1-final-project/fuel4.jpeg',
-'/Users/bilalyounes/Desktop/unit1-final-project/fuel5.jpeg',
-'/Users/bilalyounes/Desktop/unit1-final-project/fuel6.jpeg',
-'/Users/bilalyounes/Desktop/unit1-final-project/fuel7.jpeg']
+let fuelImage = ['img/fuel1.jpeg',
+'img/fuel3.jpeg',
+'img/fuel2.jpeg',
+'img/fuel4.jpeg',
+'img/fuel5.jpeg',
+'img/fuel6.jpeg',
+'img/fuel7.jpeg']
 
 
 
@@ -717,6 +746,10 @@ function more () {
     windowFive.style.display ="block";
     windowFour.style.display = "none";
 
+    //pause the audio 
+    startAudio.play();
+    driveAudio.pause();
+
     drive.addEventListener ("click" , driving);
     command.textContent = "";
 
@@ -828,6 +861,22 @@ function stop() {
 
     if (player.days >= 4 ) {
         summaryList [4].textContent ="finished";    }
+    
+}
+
+
+
+about.addEventListener ("click" , aboutFun);
+function aboutFun() {
+    if (windowAbout.style.display === "none"){
+    windowAbout.style.display = "block";
+      
+
+    } else {
+        windowAbout.style.display = "none";
+
+    }
+
     
 }
 
