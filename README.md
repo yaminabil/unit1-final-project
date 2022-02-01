@@ -17,5 +17,5 @@ class 3 : city
 the 4 cities replresent the loads player can pick 
 the citties they are diffrent based on the load price and the fuel price 
 
-=> the player in the begining enters a valid  name by clicking start the event listner will create a variable of class driver that have the player name ass the player 
+=> the player in the begining enters a valid  name by clicking start the event listner will create a variable of class driver that have the player name as the player 
 typed in in window one .
